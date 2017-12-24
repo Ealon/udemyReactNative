@@ -3,6 +3,7 @@ import {
   Text,
   View,
   Image,
+  Linking,
 } from 'react-native';
 import Card from './Card';
 import Button from './Button';
@@ -14,6 +15,7 @@ const AlbumDetail = ({ album }) => {
     artist,
     thumbnail_image,
     image,
+    url,
   } = album;
   const {
     thumbnailStyle,
@@ -51,7 +53,9 @@ const AlbumDetail = ({ album }) => {
 
       <CardSection>
         {/* <Button onPress={console.log(title)}>Buy Now</Button> NOTICE: will automatically executes when mounting*/}
-        <Button onPress={() => console.log(title)}>Buy Now</Button>
+        <Button onPress={() => Linking.openURL(url)}>
+          Buy Now
+        </Button>
       </CardSection>
     </Card>
   );
