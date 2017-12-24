@@ -5,6 +5,7 @@ import {
   Image,
 } from 'react-native';
 import Card from './Card';
+import Button from './Button';
 import CardSection from './CardSection';
 
 const AlbumDetail = ({ album }) => {
@@ -40,11 +41,17 @@ const AlbumDetail = ({ album }) => {
           </Text>
         </View>
       </CardSection>
+      
       <CardSection>
         <Image
           source={{ uri: image }}
           style={imageStyle}
         />
+      </CardSection>
+
+      <CardSection>
+        {/* <Button onPress={console.log(title)}>Buy Now</Button> NOTICE: will automatically executes when mounting*/}
+        <Button onPress={() => console.log(title)}>Buy Now</Button>
       </CardSection>
     </Card>
   );
